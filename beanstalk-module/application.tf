@@ -40,6 +40,12 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_app_env" {
 
   setting {
     namespace = "aws:autoscaling:launchconfiguration"
+    name = "EC2KeyName"
+    value = "Auto_Scale"
+  }
+
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
     name = "InstanceType"
     value = "t2.small"
   }

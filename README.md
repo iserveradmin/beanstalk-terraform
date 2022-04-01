@@ -5,3 +5,8 @@ github_branch = "main"
 access_key = "aws access key"
 secret_key = "aws secret key"
 OAuthToken = "github oAuthToken. you can generate it from github."
+
+
+# how to delete module 
+```
+terraform destroy -target module.${modulename}
