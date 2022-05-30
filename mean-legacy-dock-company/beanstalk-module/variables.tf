@@ -1,0 +1,11 @@
+variable "github_organization" {}
+variable "github_repository" {}
+variable "github_branch" {}
+variable "solution_stackname" {}
+#variable "terraform_backend_s3" {}
+variable "region" {}
+variable "OAuthToken" {}
+variable api_id                  { type = string }
+variable deployment_stage_name   { type = string }
+variable root_domain             { type = string }
+locals { name-prefix = "${var.github_repository}-${var.github_branch}" }
