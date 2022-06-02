@@ -10,3 +10,12 @@ resource "aws_route53_record" "dns_update" {
     zone_id                = data.aws_elastic_beanstalk_hosted_zone.current.id
   }
 }
+
+resource "aws_route53_record" "dns_update_cname" {
+  for_each = { for k in aws_acm_certificate.static_url.subject_alternative_names : k => k if var.sub_domain == "" }
+  name     = each.value
+  type     = "CNAME"
+  ttl      = "5"
+  zone_id  = data.aws_route53_zone.root_domain.id
+  records  = [aws_acm_certificate.static_url.domain_name]
+}

@@ -7,6 +7,7 @@ data "aws_route53_zone" "root_domain" {
 resource "aws_acm_certificate" "static_url" {
   domain_name       = var.sub_domain != "" ? "${var.sub_domain}.${var.root_domain}" :  var.root_domain
   validation_method = "DNS"
+  subject_alternative_names = var.sub_domain != "" ? [] :  ["www.${var.root_domain}"]
 }
 
 resource "aws_route53_record" "dns_validation_record" {
