@@ -4,7 +4,7 @@ terraform {
     organization = "MDS_Brand"
 
     workspaces {
-       name = "mean-harvey-rv"
+       name = "mean-legacy-dock-company"
     }
   }
 }

@@ -1,7 +1,7 @@
-module "mean-mdsbrand" {
+module "beanstalk-module" {
   source               = "./beanstalk-module"
-  github_repository    = "mean-mdsbrand"
-  github_branch        = "master"
+  github_repository    = var.github_repository
+  github_branch        = var.github_branch
   github_organization  = var.github_organization
   solution_stackname   = var.solution_stackname
   region               = var.region
