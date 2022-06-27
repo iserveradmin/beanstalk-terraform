@@ -1,0 +1,7 @@
+# you need to add three perameters here. 
+github_organization = "mdsbrand"   # provide github organization name 
+github_repository = "" #  provide github repository name Ex : mean-mpmercury
+github_branch = "master"     # provide github branch Ex : master
+root_domain = "" # provide domain name Ex : mdsbrand.com
+sub_domain = ""    # provide subdomain here. keep it blank when launching prodcution version. ex: mpmercury
+subject_alternative_names = []    # Defauult keep it blank. provide other domain nme if you want more subdoamin needs to point on same beanstalk. 
