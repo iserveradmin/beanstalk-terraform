@@ -8,3 +8,4 @@ variable "github_repository" {}
 variable "github_branch" {}
 variable "root_domain" {}
 variable "sub_domain" {}
+variable "subject_alternative_names" {}
