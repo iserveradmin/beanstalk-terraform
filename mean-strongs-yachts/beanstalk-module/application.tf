@@ -73,6 +73,11 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_app_env" {
     name      = "InstanceType"
     value     = "t2.small"
   }
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "RootVolumeSize"
+    value     = "30" # Set the root volume size to 40 GB
+  }
 
   setting {
     namespace = "aws:autoscaling:asg"
