@@ -20,6 +20,76 @@
                 </div>
             </div>
         </section>
+        <section>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 m-auto">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item">
+                                <div class="hmSlide text-center">
+                                    <div class="hmSlideImg">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg1.png' ); ?>" alt="">
+                                    </div>
+                                    <div class="hmSlideTitl">
+                                        <h5>Health & Medical</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="hmSlide text-center">
+                                    <div class="hmSlideImg">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg2.png' ); ?>" alt="">
+                                    </div>
+                                    <div class="hmSlideTitl">
+                                        <h5>Food & Beverage</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="hmSlide text-center">
+                                    <div class="hmSlideImg">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg3.png' ); ?>" alt="">
+                                    </div>
+                                    <div class="hmSlideTitl">
+                                        <h5>Bath & Beauty</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="hmSlide text-center">
+                                    <div class="hmSlideImg">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg1.png' ); ?>" alt="">
+                                    </div>
+                                    <div class="hmSlideTitl">
+                                        <h5>Health & Medical</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="hmSlide text-center">
+                                    <div class="hmSlideImg">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg2.png' ); ?>" alt="">
+                                    </div>
+                                    <div class="hmSlideTitl">
+                                        <h5>Food & Beverage</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="hmSlide text-center">
+                                    <div class="hmSlideImg">
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg3.png' ); ?>" alt="">
+                                    </div>
+                                    <div class="hmSlideTitl">
+                                        <h5>Health & Medical</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="cmpnyCulturSec">
                 <div class="container-fluid">
                     <div class="row">
