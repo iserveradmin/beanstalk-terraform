@@ -407,9 +407,40 @@ body{
         height: 100%;
         object-fit: cover;
     }
+    .cstmSliderBtn .owl-prev>span, .cstmSliderBtn .owl-next>span {
+        font-size: 50px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding-bottom: 8px;
+    }
+    .cstmSliderBtn .owl-prev:hover, .cstmSliderBtn .owl-next:hover{
+        background-color: transparent !important;
+        color: #000 !important;
+    }
+    button.owl-prev {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        left: -100px;
+    }
+    button.owl-next {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        right: -100px;
+    }
 /* Header Styling Ends Here */
 /* Main Styling Starts Here */
-
+.cmnyCltr{
+    background: #f2f3f4;
+    padding: 50px 0;
+    margin-top: 30px;
+}
 .whCoseSec{
     position: relative;
     padding: 50px 0;

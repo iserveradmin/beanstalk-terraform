@@ -23,10 +23,10 @@
         <section>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-6 m-auto">
-                        <div class="owl-carousel owl-theme">
+                    <div class="col-lg-6 m-auto hmSlider">
+                        <div class=" cstmSliderBtn owl-carousel owl-theme">
                             <div class="item">
-                                <div class="hmSlide text-center">
+                                <div class="hmSlide  text-center">
                                     <div class="hmSlideImg">
                                         <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hmSlideImg1.png' ); ?>" alt="">
                                     </div>
@@ -90,7 +90,7 @@
                 </div>
             </div>
         </section>
-        <section class="cmpnyCulturSec">
+        <section class="cmpnyCulturSec cmnyCltr">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-10">

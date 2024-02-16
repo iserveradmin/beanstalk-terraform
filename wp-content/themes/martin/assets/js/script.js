@@ -19,7 +19,7 @@ $(document).ready(function(){
         $('.uploadedFiles').append(fileCard);
     });
 
-    $('.owl-carousel').owlCarousel({
+    $('.hmSlider .owl-carousel').owlCarousel({
         loop:true,
         margin:10,
         nav:true,
@@ -33,6 +33,22 @@ $(document).ready(function(){
             },
             1000:{
                 items:3
+            }
+        }
+    })
+    $('.formSlider .owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
             }
         }
     })

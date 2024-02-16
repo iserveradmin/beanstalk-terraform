@@ -74,11 +74,11 @@
                             <div class="navRight">
                                 <div class="nrListWrap">
                                     <ul class="nrlist">
-                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon1.png' ); ?>" alt=""></span><span class="navTxt"><a href="javascript:(void)"> FAQ</a></span></li>
-                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon2.png' ); ?>" alt=""></span><span class="navTxt"><a href="javascript:(void)"> Testimonials</a></span></li>
-                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon3.png' ); ?>" alt=""></span><span class="navTxt"><a href="javascript:(void)"> Forms</a></span></li>
-                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon4.png' ); ?>" alt=""></span><span class="navTxt"><a href="javascript:(void)"> Request Estimate</a></span></li>
-                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon5.png' ); ?>" alt=""></span><span class="navTxt"><a href="javascript:(void)"> Upload Artwork</a></span></li>
+                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon1.png' ); ?>" alt=""></span><span class="navTxt"><a href="<?php echo home_url('/faq'); ?>"> FAQ</a></span></li>
+                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon2.png' ); ?>" alt=""></span><span class="navTxt"><a href="<?php echo home_url('/testimonials'); ?>"> Testimonials</a></span></li>
+                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon3.png' ); ?>" alt=""></span><span class="navTxt"><a href="<?php echo home_url('/forms'); ?>"> Forms</a></span></li>
+                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon4.png' ); ?>" alt=""></span><span class="navTxt"><a href="<?php echo home_url('/request-estimate'); ?>"> Request Estimate</a></span></li>
+                                        <li class="nrItem"><span class="navIcon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/headerIcon5.png' ); ?>" alt=""></span><span class="navTxt"><a href="<?php echo home_url('/art-work'); ?>"> Upload Artwork</a></span></li>
                                     </ul>
                                 </div>
                             </div>
@@ -94,11 +94,11 @@
                         <div class="bottomNav">
                             <div class="bnlWrap">
                                 <ul class="bnList">
-                                    <li class="bnItem"><a href="javascript:(void)"> Home</a></li>
+                                    <li class="bnItem"><a href="<?php echo home_url('/'); ?>"> Home</a></li>
                                     <li class="bnItem"><a href="javascript:(void)"> Label Solutions</a></li>
                                     <li class="bnItem"><a href="javascript:(void)"> Capabilities</a></li>
                                     <li class="bnItem"><a href="javascript:(void)"> Industries Served</a></li>
-                                    <li class="bnItem"><a href="javascript:(void)"> Contact</a></li>
+                                    <li class="bnItem"><a href="<?php echo home_url('/contact'); ?>"> Contact</a></li>
                                 </ul>
                             </div>
                             <div class="bnsWrap">
