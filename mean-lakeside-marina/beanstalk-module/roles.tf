@@ -248,7 +248,6 @@ resource "aws_s3_bucket_policy" "artifacts" {
   policy =<<POLICY
 {
   "Version": "2012-10-17",
-  "Id": "incredible-website-artifacts-policy",
   "Statement": [
     {
       "Sid": "incredible-website-access",
@@ -269,46 +268,6 @@ resource "aws_s3_bucket_policy" "artifacts" {
       "Resource": ["${aws_s3_bucket.artifacts.arn}/*"]
     }
   ]
-}
-POLICY
-}
-resource "aws_iam_role_policy" "mean_website_upload_data" {
-  name = "${var.github_repository}-upload"
-  role = aws_iam_role.build.id
-
-  policy = <<POLICY
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:GetAccessPoint",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:ListAccessPoints",
-                "s3:CreateStorageLensGroup",
-                "s3:ListJobs",
-                "s3:PutStorageLensConfiguration",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensGroups",
-                "s3:ListStorageLensConfigurations",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:ListAllMyBuckets",
-                "s3:ListAccessGrantsInstances",
-                "s3:PutAccessPointPublicAccessBlock",
-                "s3:CreateJob"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": "arn:aws:s3:::mean-websites-uploaded-data/${var.github_repository}/*"
-        }
-    ]
 }
 POLICY
 }
