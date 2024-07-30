@@ -9,47 +9,77 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_app_env" {
   solution_stack_name = var.solution_stackname
 
   setting {
-    namespace = "aws:elbv2:listener:80"
-    name      = "ListenerEnabled"
-    value     = "true"
+    namespace = "aws:ec2:vpc"
+    name      = "VPCId"
+    value     = "vpc-0e0e7356c41da05a2"
   }
+  setting {
+    namespace = "aws:ec2:vpc"
+    name      = "Subnets"
+    value     = "subnet-0b2d4b0b2f47b09d8,subnet-0e4b26718aca2383a,subnet-015740ba60665900a"
+  }
+  setting {
+  namespace = "aws:ec2:vpc"
+  name = "AssociatePublicIpAddress"
+  value = "False"
+  }
+  ###########################################################
 
   setting {
-    namespace = "aws:elbv2:listener:80"
-    name      = "Protocol"
-    value     = "HTTP"
+    namespace = "aws:elbv2:loadbalancer"
+    name      = "SharedLoadBalancer"
+    value     = aws_lb.madis_mdsbrand_com.arn
   }
-  #
   setting {
-    namespace = "aws:elbv2:listener:443"
-    name      = "ListenerEnabled"
-    value     = "true"
+    namespace = "aws:elbv2:loadbalancer"
+    name      = "SecurityGroups"
+    value     = aws_security_group.beanstalk_sg.id
   }
-
+  # setting {
+  #   namespace = "aws:elbv2:loadbalancer"
+  #   name      = "ManagedSecurityGroup"
+  #   value     = aws_security_group.beanstalk_sg.id
+  # }
   setting {
-    namespace = "aws:elbv2:listener:443"
-    name      = "Protocol"
-    value     = "HTTPS"
+    namespace = "aws:elasticbeanstalk:environment"
+    name = "EnvironmentType"
+    value = "LoadBalanced"
   }
-
   setting {
-    namespace = "aws:elbv2:listener:443"
-    name      = "SSLCertificateArns"
-    value     = aws_acm_certificate.static_url.arn
+    namespace = "aws:elbv2:listener:default"
+    name = "ListenerEnabled"
+    value = "False"
   }
-
   setting {
-    namespace = "aws:elbv2:listener:443"
-    name      = "SSLPolicy"
-    value     = "ELBSecurityPolicy-2016-08"
+    namespace = "aws:elbv2:listenerrule:madis"
+    name = "HostHeaders"
+    value = "madis.mdsbrand.com"
   }
-
+  setting {
+    namespace = "aws:elbv2:listenerrule:madis"
+    name = "Priority"
+    value = "2"
+  }
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name = "Port"
+    value = 443
+  }
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name = "Protocol"
+    value = "HTTPS"
+  }
   setting {
     namespace = "aws:elasticbeanstalk:environment"
     name      = "LoadBalancerType"
     value     = "application"
   }
-
+  setting {
+  namespace = "aws:elasticbeanstalk:environment"
+  name = "LoadBalancerIsShared"
+  value = "True"
+  }
   setting {
     namespace = "aws:elasticbeanstalk:application:environment"
     name      = "NODE_ENV"
@@ -98,4 +128,23 @@ resource "aws_elastic_beanstalk_environment" "beanstalk_app_env" {
     value     = "email"
   }
 
+}
+
+resource "aws_security_group" "beanstalk_sg" {
+  name        = "beanstalk-security-group"
+  description = "Security group for the Elastic Beanstalk environment"
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 }

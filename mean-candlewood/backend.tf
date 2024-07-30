@@ -4,7 +4,7 @@ terraform {
     organization = "MDS_Brand"
 
     workspaces {
-       name = "mean-candlewood"
+       name = "mean-candlewood" # provide github repository name here.
     }
   }
 }

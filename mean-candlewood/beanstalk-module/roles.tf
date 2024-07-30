@@ -141,7 +141,8 @@ resource "aws_iam_role_policy" "beanstalk_policy" {
         ],
         "Resource": [
             "arn:aws:s3:::elasticbeanstalk-*",
-            "arn:aws:s3:::elasticbeanstalk-*/*"
+            "arn:aws:s3:::elasticbeanstalk-*/*",
+            "arn:aws:s3:::mean-websites-uploaded-data/mean-candlewood/*"
         ]
     },
     {

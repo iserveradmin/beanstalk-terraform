@@ -4,7 +4,7 @@ terraform {
     organization = "MDS_Brand"
 
     workspaces {
-       name = "mean-bonita-boats"
+       name = "mean-bonita-boats" # provide github repository name here.
     }
   }
 }

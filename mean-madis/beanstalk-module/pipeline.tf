@@ -27,23 +27,23 @@ resource "aws_codepipeline" "pipeline" {
     }
   }
 
-  stage {
-    name = "Build"
+  # stage {
+  #   name = "Build"
 
-    action {
-      name             = "Build"
-      category         = "Build"
-      owner            = "AWS"
-      provider         = "CodeBuild"
-      input_artifacts  = ["source"]
-      output_artifacts = ["artifact"]
-      version          = "1"
+  #   action {
+  #     name             = "Build"
+  #     category         = "Build"
+  #     owner            = "AWS"
+  #     provider         = "CodeBuild"
+  #     input_artifacts  = ["source"]
+  #     output_artifacts = ["artifact"]
+  #     version          = "1"
 
-      configuration = {
-        ProjectName = aws_codebuild_project.build.name
-      }
-    }
-  }
+  #     configuration = {
+  #       ProjectName = aws_codebuild_project.build.name
+  #     }
+  #   }
+  # }
 
   stage {
     name = "Deploy"
@@ -53,7 +53,7 @@ resource "aws_codepipeline" "pipeline" {
       category        = "Deploy"
       owner           = "AWS"
       provider        = "ElasticBeanstalk"
-      input_artifacts = ["artifact"]
+      input_artifacts = ["source"]
       version         = "1"
 
       configuration = {
